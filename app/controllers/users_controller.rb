@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :admin_user,     only: :destroy
   before_action :load_user, except: %i(new index create)
   def show
-   redirect_to root_url && return unless @user.activated
+    redirect_to root_url && return unless @user.activated
     @microposts = @user.microposts.paginate page: params[:page],
     per_page: Settings.index_per_page
   end
@@ -43,33 +43,22 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
+  def following
+    @title = t "following"
+    @users = @user.following.paginate page: params[:page]
+    render :show_follow
+  end
+
+  def followers
+    @title = t "followers"
+    @users = @user.followers.paginate page: params[:page]
+    render :show_follow
+  end
   private
+
   def user_params
-    params.require(:user).permit(:name, :email, :password,
-      :password_confirmation)
-  end
-
-  # Before filters
-  # Confirms a logged-in user.
-  def logged_in_user
-    return if logged_in?
-    store_location
-    flash[:danger] = t "require_login"
-    redirect_to login_path
-  end
-
-  def correct_user
-    redirect_to root_path unless current_user? @user
-  end
-
-  def load_user
-    @user = User.find_by id: params[:id]
-    return if @user
-    flash.now[:danger] = t "user_not_found"
-    redirect_to root_path
-  end
-
-  def admin_user
-    redirect_to(root_path) unless current_user.admin?
+    params.require(:user).permit :name, :email, :password,
+      :password_confirmation
   end
 end
