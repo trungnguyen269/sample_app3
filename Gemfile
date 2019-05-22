@@ -27,9 +27,11 @@ gem "jbuilder", "~> 2.5"
 # Use ActiveModel has_secure_password
 gem "bcrypt", "~> 3.1.7"
 gem "bootstrap-will_paginate", "1.0.0"
+gem "carrierwave"
 gem "config"
 gem "faker"
 gem "jquery-rails"
+gem "mini_magick"
 gem "rails-controller-testing"
 gem "will_paginate", "3.1.7"
 # Use ActiveStorage variant
@@ -59,6 +61,9 @@ group :test do
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem "chromedriver-helper"
 end
-
+group :production do
+  gem "fog", "1.42"
+  gem "pg",  "0.20.0"
+end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
