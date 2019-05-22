@@ -3,7 +3,7 @@ class RelationshipsController < ApplicationController
   before_action :load_user, only: :create
   before_action :load_relationship, only: :destroy
 
-  def create
+   def create
     current_user.follow @user
     respond_user_path
   end
