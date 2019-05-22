@@ -3,8 +3,8 @@ en:
     home:
       title: "Home"
       para1_html: "This is the home page for the %{href}"
-      para2: "sample application"
       welcome: "Welcome to Sample App"
+      para2: "sample application"
     help:
       title: "Help"
       para1_html: "Get help on the Ruby on Rails Tutorial at the %{link}"
@@ -36,12 +36,16 @@ en:
   email: "Email"
   password: "Password"
   confirmation: "Password Confirmation"
-  create_acc: "Create me account now!"
+  create_acc: "Sign me up!"
   error_announce_html: "This form contains %{error_count}."
   user_not_found: "User does not exist"
+  users: "Users"
+  account_html: 'Account <b class="caret"></b>'
   error:
     one: "%{count} error"
     other: "%{count} errors"
+  new_user: "New user?"
+  invalid_user: "Wrong user email/password"
   url:
     main_page: "https://www.railstutorial.org/"
     help_page: "https://www.railstutorial.org/help"

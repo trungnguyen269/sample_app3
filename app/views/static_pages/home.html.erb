@@ -4,6 +4,6 @@
     <%= t ".para1_html", href: link_to(t("tutorial"), t("url.main_page")) %>
     <%= t ".para2" %>.
   </h2>
-  <%= link_to "Sign up now!", '#', class: "btn btn-lg btn-primary" %>
+  <%= link_to t(".sign_up"), signup_path, class: "btn btn-lg btn-primary" %>
 </div>
 <%= link_to image_tag("rails.png", alt: "Rails logo"), "http://rubyonrails.org/" %>
