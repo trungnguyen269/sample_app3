@@ -19,6 +19,15 @@ en:
       title: "Contact"
       para1_html: "Contact the Ruby on Rails Tutorial about the sample app at the %{href}"
       contact_page: "contact page"
+  password_resets:
+    new:
+      submit: "Submit"
+  user_mailer:
+    password_reset:
+      para1: "To reset your password click the link below:"
+      para2: "This link will expire in two hours."
+      para3: "If you did not request your password to be reset, please ignore
+        this email and your password will stay as it is."
   book: "book"
   tutorial: "Ruby on Rails Tutorial"
   main_title: "Ruby on Rails Tutorial Sample App"
@@ -59,14 +68,18 @@ en:
   delete: "delete"
   account_activation: "Account activation"
   email_greeting: "Hi %{name}"
-  account_activation_welcome: "Welcome to the Sample App! Click on the link below to activate your account:"
+  account_activation_welcome: "Welcome to the Sample App! Click on the link
+    below to activate your account:"
   check_email_announce: "Please check your email to activate your account"
   account_activated: "Account activated"
   invalid_activation_link: "Invalid activation link"
   account_inactivated: "Account inactivated. "
-  mail:
-    greeting: "Hi "
-    title_pass_rs: "User#password_reset"
+  forgot_password: "Forgot your password?"
+  password_reset_email_sent: "Email sent with password reset instructions"
+  password_reset: "Password reset"
+  password_empty: "can't be empty"
+  something_wrong: "Something wrong. Updating failed"
+  password_expire: "Password reset has expired."
   url:
     main_page: "https://www.railstutorial.org/"
     help_page: "https://www.railstutorial.org/help"
