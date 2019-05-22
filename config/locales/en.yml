@@ -46,6 +46,7 @@ en:
     other: "%{count} errors"
   new_user: "New user?"
   invalid_user: "Wrong user email/password"
+  remember_me: "Remember me"
   url:
     main_page: "https://www.railstutorial.org/"
     help_page: "https://www.railstutorial.org/help"
