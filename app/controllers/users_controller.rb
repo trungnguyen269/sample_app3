@@ -61,4 +61,27 @@ class UsersController < ApplicationController
     params.require(:user).permit :name, :email, :password,
       :password_confirmation
   end
+
+  def logged_in_user
+    return if logged_in?
+    store_location
+    flash[:danger] = t "label.pls_login"
+    redirect_to login_path
+  end
+
+  def correct_user
+    @user = User.find_by id: params[:id]
+    redirect_to root_path unless current_user? @user
+  end
+
+  def admin_user
+    redirect_to root_path unless current_user.admin?
+  end
+
+  def load_user
+    @user = User.find_by id: params[:id]
+    return if @user
+    flash[:danger] = t "errors.nil_user"
+    redirect_to root_path
+  end
 end
