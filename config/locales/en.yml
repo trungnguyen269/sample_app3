@@ -56,7 +56,17 @@ en:
   you_sure: "You sure?"
   user_deleted: "User deleted successfully"
   delete_failed: "Delete failed"
-  delete: "Delete"
+  delete: "delete"
+  account_activation: "Account activation"
+  email_greeting: "Hi %{name}"
+  account_activation_welcome: "Welcome to the Sample App! Click on the link below to activate your account:"
+  check_email_announce: "Please check your email to activate your account"
+  account_activated: "Account activated"
+  invalid_activation_link: "Invalid activation link"
+  account_inactivated: "Account inactivated. "
+  mail:
+    greeting: "Hi "
+    title_pass_rs: "User#password_reset"
   url:
     main_page: "https://www.railstutorial.org/"
     help_page: "https://www.railstutorial.org/help"
