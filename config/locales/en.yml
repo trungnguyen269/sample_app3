@@ -32,6 +32,16 @@ en:
   author: "Michael Hart"
   sample_app: "Sample App"
   footer_text_html: "The %{main_href} by %{author_href}"
+  name: "Your name"
+  email: "Email"
+  password: "Password"
+  confirmation: "Password Confirmation"
+  create_acc: "Create me account now!"
+  error_announce_html: "This form contains %{error_count}."
+  user_not_found: "User does not exist"
+  error:
+    one: "%{count} error"
+    other: "%{count} errors"
   url:
     main_page: "https://www.railstutorial.org/"
     help_page: "https://www.railstutorial.org/help"
@@ -39,4 +49,3 @@ en:
     contact_page: "https://www.railstutorial.org/contact"
     book_page: "https://www.railstutorial.org/book"
     author: "http://www.michaelhartl.com/"
-

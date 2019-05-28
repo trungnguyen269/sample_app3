@@ -1,3 +1,4 @@
 name_length: 50
 email_length: 250
 password_min_length: 6
+avatar_size: 80
