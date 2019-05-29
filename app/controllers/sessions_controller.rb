@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     if user&.authenticate params[:session][:password]
       log_in user
       remember_check params[:session][:remember_me], user
-      redirect_to user
+      redirect_back_or user
     else
       flash.now[:danger] = t "errors.msg1"
       render :new
