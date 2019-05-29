@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       remember_check params[:session][:remember_me], user
       redirect_to user
     else
-      flash.now[:danger] = t "invalid_user"
+      flash.now[:danger] = t "errors.msg1"
       render :new
     end
   end
@@ -18,9 +18,8 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
   private
-  def login_redirect user
-    log_in user
-    params[:session][:remember_me] == Settings.checked ? remember(user) : forget(user)
-    redirect_to user
+
+  def remember_check checked, user
+    checked == Settings.checked ? remember(user) : forget(user)
   end
 end
