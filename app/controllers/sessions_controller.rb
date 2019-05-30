@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       remember_check params[:session][:remember_me], user
       redirect_back_or user
     else
-      flash.now[:danger] = t "errors.msg1"
+      flash.now[:danger] = t "invalid_user"
       render :new
     end
   end
@@ -21,5 +21,16 @@ class SessionsController < ApplicationController
 
   def remember_check checked, user
     checked == Settings.checked ? remember(user) : forget(user)
+  end
+
+  def check_active_user user
+    if user.activated?
+      log_in user
+      remember_check params[:session][:remember_me], user
+      redirect_back_or user
+    else
+      flash[:warning] = t("account_inactivated")
+      redirect_to root_path
+    end
   end
 end
