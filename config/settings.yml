@@ -4,4 +4,10 @@ password_min_length: 6
 avatar_size: 80
 avatar_small: 50
 checked: "1"
+max_upload_size: 5
+img_rule: "image/jpeg,image/gif,image/png"
 password_expire_time: 2
+index_per_page: 20
+max_upload_size: 5
+micropost:
+  length_max: 140

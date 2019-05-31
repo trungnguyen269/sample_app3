@@ -4,9 +4,9 @@ class UsersController < ApplicationController
   before_action :admin_user,     only: :destroy
   before_action :load_user, except: %i(new index create)
   def show
-    return @user if @user = User.find_by(id: params[:id])
-    flash[:danger] = I18n.t "user_not_found"
-    redirect_to root_url
+   redirect_to root_url && return unless @user.activated
+    @microposts = @user.microposts.paginate page: params[:page],
+    per_page: Settings.index_per_page
   end
 
   def index
@@ -70,6 +70,6 @@ class UsersController < ApplicationController
   end
 
   def admin_user
-    redirect_to(root_url) unless current_user.admin?
+    redirect_to(root_path) unless current_user.admin?
   end
 end
