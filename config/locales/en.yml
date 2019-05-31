@@ -97,6 +97,10 @@ en:
   micropost_deleted: "Micropost deleted"
   micropost_detele_failed: "Micropost delete failed"
   less_than_5mb: "should be less than 5MB"
+  following: "following"
+  followers: "followers"
+  follow: "Follow"
+  unfollow: "Unfollow"
   url:
     main_page: "https://www.railstutorial.org/"
     help_page: "https://www.railstutorial.org/help"
