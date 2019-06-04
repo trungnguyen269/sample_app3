@@ -78,7 +78,8 @@ class User < ApplicationRecord
   end
 
   def feed
-    microposts.order_created
+    ids = following_ids << id
+    Micropost.of_following(ids).descending
   end
 
   def follow other_user

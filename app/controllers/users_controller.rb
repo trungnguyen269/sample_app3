@@ -4,9 +4,8 @@ class UsersController < ApplicationController
   before_action :admin_user,     only: :destroy
   before_action :load_user, except: %i(new index create)
   def show
-    redirect_to root_url && return unless @user.activated
-    @microposts = @user.microposts.paginate page: params[:page],
-    per_page: Settings.index_per_page
+      @microposts = @user.microposts.descending.paginate(page: params[:page],
+      per_page: Settings.index_per_page)
   end
 
   def index
